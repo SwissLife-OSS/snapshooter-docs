@@ -1,0 +1,10 @@
+{
+  "docs": {
+    "Introduction": ["doc1"],
+    "API Reference": ["doc2"],
+    "Guides": ["doc3"]
+  },
+  "examples": {
+    "Match Options": ["doc4", "doc5"]
+  }
+}
