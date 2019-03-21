@@ -42,3 +42,7 @@
   /*color: #fbae18;*/
   font-size: 30px;
 }
+
+.blockImage img {
+  height: 100%;
+}

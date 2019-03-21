@@ -65,7 +65,7 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button href={docUrl("doc1.html")}>Get Started</Button>
-            <Button href={docUrl("doc1.html")}>Learn the Basics</Button>
+            <Button href={docUrl("doc1.html")}>Learn More</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -81,11 +81,12 @@ class Index extends React.Component {
     const Block = props => (
       <Container
         padding={["bottom", "top"]}
+        margin={props.margin}
         id={props.id}
         background={props.background}
       >
         <GridBlock
-          align="center"
+          align={props.align}
           contents={props.children}
           layout={props.layout}
         />
@@ -97,109 +98,126 @@ class Index extends React.Component {
         className="productShowcaseSection paddingBottom"
         style={{ textAlign: "center" }}
       >
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <h1>A snapshot test utility to simplify your tests</h1>
+        <MarkdownBlock>
+          Snapshooter is a flexible .Net testing tool to simplify the validation
+          of your test results in your unit / integration tests. It creates
+          simply a snapshot of your test result object and stores it on the file
+          system. When the test is executed again, the snapshooter will compare
+          the current test result object with the stored snapshot, if both are
+          the same, the test will pass.
+        </MarkdownBlock>
+        <MarkdownBlock>
+          Snapshooter is based on the idea of **[Jest Snapshot
+          Testing](https://jestjs.io/docs/en/snapshot-testing/)**
+        </MarkdownBlock>
       </div>
     );
 
     const TryOut = () => (
-      <Block id="try">
+      <Block layout="threeColumn" align="left" margin="30">
         {[
           {
-            content: "Talk about trying this out",
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: "left",
-            title: "Try it Out"
-          }
-        ]}
-      </Block>
-    );
+            content: `\`\`\`csharp
 
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              "This is another description of how this project is useful",
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: "right",
-            title: "Description"
-          }
-        ]}
-      </Block>
-    );
+// arrange
+var serviceClient = new ServiceClient();
 
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content: "Talk about learning how to use this",
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: "right",
-            title: "Learn How"
-          }
-        ]}
-      </Block>
-    );
+// act
+TestPerson person = serviceClient.CreatePerson(...);
 
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: "This is the content of my feature",
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: "top",
-            title: "Feature One"
+// assert
+Assert.IsEqual(person.Firstname, "David");
+Assert.IsEqual(person.Lastname, "Smith");
+Assert.IsEqual(person.Age, 30);
+Assert.IsEqual(person.Size, 182.5214);
+Assert.IsEqual(person.CreationDate, DateTime.Parse(...));
+Assert.IsEqual(person.DateOfBirth, DateTime.Parse(...));
+
+\`\`\`
+`
           },
           {
-            content: "The content of my second feature",
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: "top",
-            title: "Feature Two"
+            title: "**Reduce your asserts in your test**",
+            content: `Instead of writing multiple asserts within your test assert
+            section, just reduce it to one assert.
+
+Sometimes we receive a test result object with several properties, 
+and all of them have to be checked... Now instead of writing for each property 
+an assert, just validate all properties at once with a snapshot.`
+          },
+          {
+            content: `\`\`\`csharp
+
+// arrange
+var serviceClient = new ServiceClient();
+
+// act
+TestPerson person = serviceClient.CreatePerson(...);
+
+// assert
+Snapshot.Match(person);
+
+
+
+
+
+
+\`\`\`
+`
           }
         ]}
       </Block>
     );
 
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
+    const GetStarted = () => (
+      <Block layout="twoColumn" background="light" align="left">
+        {[
+          {
+            title: "**Get started in seconds**",
+            content: `With Snapshooter you need just two commands to get a 
+            snapshot test validation running in your test project.
 
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
+Install the snapshooter nuget package within your test project:
 
-      const pageUrl = page => baseUrl + (language ? `${language}/` : "") + page;
+\`\`\`sh
+dotnet add package Snapshooter.Xunit
+\`\`\`
 
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl("users.html")}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
+
+Assert the result in your test with the **Snapshot.Match** command:
+\`\`\`csharp
+[Fact]
+public void CreatePerson_VerifyPersonBySnapshot_SuccessfulVerified()
+{
+    // arrange
+    var serviceClient = new ServiceClient();
+
+    // act
+    TestPerson person = serviceClient.CreatePerson(
+        Guid.Parse("2292F21C-8501-4771-A070-C79C7C7EF451"), "David", "Mustermann");
+
+    // assert
+    Snapshot.Match(person);
+}
+\`\`\`
+`
+          },
+          {
+            image: `${baseUrl}img/SnapshotJson.jpg`,
+            imageAlign: "right"
+          }
+        ]}
+      </Block>
+    );
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
           <FeatureCallout />
-          <LearnHow />
           <TryOut />
-          <Description />
-          <Showcase />
+          <GetStarted />
         </div>
       </div>
     );
