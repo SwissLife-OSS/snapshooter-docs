@@ -27,9 +27,9 @@
     },
     "links": {
       "Docs": "Docs",
-      "API": "API",
-      "Help": "Help",
-      "Blog": "Blog"
+      "Examples": "Examples",
+      "Blog": "Blog",
+      "GitHub": "GitHub"
     },
     "categories": {
       "Introduction": "Introduction",

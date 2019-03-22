@@ -12,19 +12,25 @@ const users = [{
   pinned: true,
 }, ];
 
+const baseUrl = 'https://snapshooter.github.io';
+const repoUrl = 'https://github.com/SwissLife-OSS/snapshooter';
+const organizationUrl = 'https://swissLife-oss.github.io';
+const examplesUrl = 'https://github.com/SwissLife-OSS/snapshooter-examples'
+const blogUrl = organizationUrl + "/blog";
+
 const siteConfig = {
   title: 'Snapshooter', // Title for your website.
   tagline: 'A snapshot testing tool for .NET Core and .NET Framework',
-  url: 'https://snapshooter.github.io', // Your website URL
+  url: baseUrl, // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
-  url: 'https://snapshooter.github.io',
+  url: baseUrl,
   baseUrl: '/',
 
   // Used for publishing and more
   projectName: 'snapshooter-docs',
   organizationName: 'SwissLife-OSS',
-  organizationUrl: 'https://swissLife-oss.github.io',
+  organizationUrl,
 
   headerLinks: [{
       doc: 'introduction',
@@ -32,17 +38,21 @@ const siteConfig = {
       label: 'Docs'
     },
     {
-      doc: 'doc4',
-      label: 'API'
+      href: examplesUrl,
+      label: 'Examples',
+      external: true
     },
     {
-      page: 'help',
-      label: 'Help'
-    },
-    {
+      href: blogUrl,
       blog: true,
-      label: 'Blog'
+      label: 'Blog',
+      external: true
     },
+    {
+      href: repoUrl,
+      label: 'GitHub',
+      external: true
+    }
   ],
 
   // If you have users set above, you add it here:
@@ -102,7 +112,7 @@ const siteConfig = {
   // direct editing of docs
   editUrl: "https://github.com/SwissLife-OSS/snapshooter-docs/edit/master/docs/",
 
-  repoUrl: 'https://github.com/SwissLife-OSS/snapshooter-docs',
+  repoUrl,
 };
 
 module.exports = siteConfig;

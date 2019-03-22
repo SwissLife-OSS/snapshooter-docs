@@ -21,14 +21,21 @@ class Footer extends React.Component {
     return baseUrl + (language ? `${language}/` : "") + doc;
   }
 
+  organizationUrl(doc) {
+    const organizationUrl = this.props.config.organizationUrl;
+    return organizationUrl + "/" + doc;
+  }
+
   render() {
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
           <div>
             <h3>Community</h3>
-            <a href={this.pageUrl("cla")}>Contributor License Agreements</a>
-            <a href={this.pageUrl("coc")}>Code of Conduct</a>
+            <a href={this.organizationUrl("cla")}>
+              Contributor License Agreements
+            </a>
+            <a href={this.organizationUrl("coc")}>Code of Conduct</a>
           </div>
         </section>
         <a
