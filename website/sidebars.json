@@ -1,10 +1,17 @@
 {
   "docs": {
-    "Introduction": ["doc1"],
-    "API Reference": ["doc2"],
+    "Introduction": ["introduction", "get-started", "basic-concept"],
+    "Documentation": [
+      "snapshot-naming",
+      "snapshot-options",
+      "folder-structure",
+      "snapshot-mismatch-handling",
+      "scalar-type-snapshot"
+    ],
+    "Match Options": ["Ignore Option", "Assert Option", "TypeOf Option"],
     "Guides": ["doc3"]
   },
   "examples": {
-    "Match Options": ["doc4", "doc5"]
+    "Match Options": ["doc2", "doc3"]
   }
 }

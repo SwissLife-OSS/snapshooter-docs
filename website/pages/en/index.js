@@ -64,8 +64,8 @@ class HomeSplash extends React.Component {
           <Logo img_src={`${baseUrl}img/logo_sl_snapshooter.svg`} />
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl("doc1.html")}>Get Started</Button>
-            <Button href={docUrl("doc1.html")}>Learn More</Button>
+            <Button href={docUrl("get-started")}>Get Started</Button>
+            <Button href={docUrl("introduction")}>Learn More</Button>
           </PromoSection>
         </div>
       </SplashContainer>

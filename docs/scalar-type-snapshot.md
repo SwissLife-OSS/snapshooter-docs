@@ -1,6 +1,7 @@
 ---
-id: doc2
-title: document number 2
+id: scalar-type-snapshot
+title: Snapshots of Scalar Types
+sidebar_label: Scalar Types
 ---
 
 This is a link to [another document.](doc3.md)  

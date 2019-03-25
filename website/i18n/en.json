@@ -5,24 +5,37 @@
     "previous": "Previous",
     "tagline": "A snapshot testing tool for .NET Core and .NET Framework",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+      "basic-concept": {
+        "title": "Basic Concept",
+        "sidebar_label": "Basic Concept"
       },
-      "doc2": {
-        "title": "document number 2"
+      "folder-structure": {
+        "title": "Folder Structure",
+        "sidebar_label": "Folder Structure"
       },
-      "doc3": {
-        "title": "This is document number 3"
-      },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+      "get-started": {
+        "title": "Get Started",
+        "sidebar_label": "Get Started"
       },
       "introduction": {
-        "title": "introduction"
+        "title": "Introduction",
+        "sidebar_label": "Introduction"
+      },
+      "scalar-type-snapshot": {
+        "title": "Snapshots of Scalar Types",
+        "sidebar_label": "Scalar Types"
+      },
+      "snapshot-mismatch-handling": {
+        "title": "Snapshot Mismatch Handling",
+        "sidebar_label": "Snapshot Mismatch"
+      },
+      "snapshot-naming": {
+        "title": "Snapshot Naming",
+        "sidebar_label": "Snapshot Naming"
+      },
+      "snapshot-options": {
+        "title": "Snapshot Match Options",
+        "sidebar_label": "Snapshot Match Options"
       }
     },
     "links": {
@@ -33,9 +46,9 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "API Reference": "API Reference",
-      "Guides": "Guides",
-      "Match Options": "Match Options"
+      "Documentation": "Documentation",
+      "Match Options": "Match Options",
+      "Guides": "Guides"
     }
   },
   "pages-strings": {

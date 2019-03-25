@@ -84,7 +84,6 @@ h4,
 h5,
 h6 {
     font-family: Legacy Serif ITC Book;
-    font-weight: normal;
 }
 
 .button {
@@ -127,6 +126,10 @@ h6 {
 
 .container .wrapper .imageAlignSide p {
     text-align: left;
+}
+
+.container.mainContainer a {
+    color: #d82034;
 }
 
 .nav-footer {
