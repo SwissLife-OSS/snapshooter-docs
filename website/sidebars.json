@@ -3,8 +3,8 @@
     "Introduction": ["introduction", "get-started", "basic-concept"],
     "Documentation": [
       "snapshot-naming",
-      "snapshot-options",
       "folder-structure",
+      "snapshot-options",
       "snapshot-mismatch-handling",
       "scalar-type-snapshot"
     ],
