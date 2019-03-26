@@ -21,9 +21,8 @@ const blogUrl = organizationUrl + "/blog";
 const siteConfig = {
   title: 'Snapshooter', // Title for your website.
   tagline: 'A snapshot testing tool for .NET Core and .NET Framework',
-  url: 'https://snapshooter.github.io', // Your website URL
-  baseUrl: '/', // Base URL for your project */
-  cname: 'snapshooter.github.io',
+  url: 'https://swisslife-oss.github.io', // Your website URL
+  baseUrl: '/snapshooter/', // Base URL for your project */
 
   // Used for publishing and more
   projectName: 'snapshooter-docs',
