@@ -12,7 +12,7 @@ const users = [{
   pinned: true,
 }, ];
 
-const baseUrl = 'https://snapshooter.github.io';
+
 const repoUrl = 'https://github.com/SwissLife-OSS/snapshooter';
 const organizationUrl = 'https://swissLife-oss.github.io';
 const examplesUrl = 'https://github.com/SwissLife-OSS/snapshooter-examples'
@@ -21,7 +21,7 @@ const blogUrl = organizationUrl + "/blog";
 const siteConfig = {
   title: 'Snapshooter', // Title for your website.
   tagline: 'A snapshot testing tool for .NET Core and .NET Framework',
-  url: baseUrl, // Your website URL
+  url: 'https://snapshooter.github.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
   cname: 'snapshooter.github.io',
 
