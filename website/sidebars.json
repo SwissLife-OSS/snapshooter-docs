@@ -1,0 +1,17 @@
+{
+  "docs": {
+    "Introduction": ["introduction", "get-started", "basic-concept"],
+    "Documentation": [
+      "snapshot-naming",
+      "folder-structure",
+      "snapshot-options",
+      "snapshot-mismatch-handling",
+      "scalar-type-snapshot"
+    ],
+    "Match Options": ["Ignore Option", "Assert Option", "TypeOf Option"],
+    "Guides": ["doc3"]
+  },
+  "examples": {
+    "Match Options": ["doc2", "doc3"]
+  }
+}
