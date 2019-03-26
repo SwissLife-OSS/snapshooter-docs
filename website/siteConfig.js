@@ -23,13 +23,13 @@ const siteConfig = {
   tagline: 'A snapshot testing tool for .NET Core and .NET Framework',
   url: baseUrl, // Your website URL
   baseUrl: '/', // Base URL for your project */
-  // For github.io type URLs, you would set the url and baseUrl like:
-  url: baseUrl,
-  baseUrl: '/',
+  cname: 'snapshooter.github.io',
 
   // Used for publishing and more
   projectName: 'snapshooter-docs',
+  realProjectName: "snapshooter",
   organizationName: 'SwissLife-OSS',
+  organizationTitle: 'SwissLife-OSS',
   organizationUrl,
 
   headerLinks: [{
