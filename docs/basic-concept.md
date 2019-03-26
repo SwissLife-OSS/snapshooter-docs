@@ -81,3 +81,5 @@ the `__snapshot__\mismatch` folder to the parent folder `__snapshot__` and
 overwrite the existing snapshot.
 
 If the new mismatching snapshot file is wrong... then verify your code....
+
+Best Practices about [Snapshot Mismatch Handling](snapshot-mismatch-handling)

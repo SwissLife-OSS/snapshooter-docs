@@ -4,26 +4,109 @@ title: Snapshot Naming
 sidebar_label: Snapshot Naming
 ---
 
-Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
+The name of a snapshot is its unique identifier. If two separate snapshots
+have the exactly same name, then some mismatch failures will occur.
+Therefore make sure, that the snapshot name is always unique in the
+`__snapshot__` folder.
 
-## Lorem
+## Default Snapshot Name
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.
+If no snapshot name is explicitly defined in the snapshot match statement,
+then Snapshooter will create per default a unique snapshot name for your
+snapshot.
 
-## Mauris In Code
+The default snapshot name is a composition of the test class name and
+the test method name. Additionally, every snapshot file name ends with
+**.snap**.
 
+`Snapshot.Match(yourResultObject);`
+
+> Snapshot default name: `<TestClassName>.<TestMethodName>.snap`
+
+[Example:](https://github.com/SwissLife-OSS/snapshooter-examples/blob/master/Examples/Snapshooter.Examples.Xunit/2_NamingTests/NamingTests.cs)
+
+```csharp
+[Fact]
+public void CreatePerson_DefaultSnapshotName_SnapshotWithDefaultName()
+{
+    // arrange
+    var serviceClient = new ServiceClient();
+
+    // act
+    TestPerson person = serviceClient.CreatePerson(
+        Guid.Parse("1192F21C-8501-4771-A070-C79C7C7EF411"), "Albert", "Einstein");
+
+    // assert
+
+    // Snapshot name is NamingTests.CreatePerson_DefaultSnapshotName_SnapshotWithDefaultName.snap
+    Snapshot.Match(person);
+}
 ```
-Mauris vestibulum ullamcorper nibh, ut semper purus pulvinar ut. Donec volutpat orci sit amet mauris malesuada, non pulvinar augue aliquam. Vestibulum ultricies at urna ut suscipit. Morbi iaculis, erat at imperdiet semper, ipsum nulla sodales erat, eget tincidunt justo dui quis justo. Pellentesque dictum bibendum diam at aliquet. Sed pulvinar, dolor quis finibus ornare, eros odio facilisis erat, eu rhoncus nunc dui sed ex. Nunc gravida dui massa, sed ornare arcu tincidunt sit amet. Maecenas efficitur sapien neque, a laoreet libero feugiat ut.
+
+## Defined Snapshot Name
+
+If you need a completely different snapshot name, you have the possibility
+to overwrite the default snapshot name. The snapshot name can be defined
+in the snapshot match statement.
+
+`Snapshot.Match(yourResultObject, "MyOwnSnapshotName1");`
+
+This will result in **MyOwnSnapshotName1.snap**
+
+[Example:](https://github.com/SwissLife-OSS/snapshooter-examples/blob/master/Examples/Snapshooter.Examples.Xunit/2_NamingTests/NamingTests.cs)
+
+```csharp
+[Fact]
+public void CreatePerson_DefinedSnapshotName_SnapshotWithDefinedName()
+{
+    // arrange
+    var serviceClient = new ServiceClient();
+
+    // act
+    TestPerson person = serviceClient.CreatePerson(
+        Guid.Parse("1192F21C-8501-4771-A070-C79C7C7EF411"), "Albert", "Einstein");
+
+    // assert
+
+    // Snapshot name is ExplicitlyDefinedSnapshotName.snap
+    Snapshot.Match(person, "ExplicitlyDefinedSnapshotName");
+}
 ```
 
-## Nulla
+## Snapshot Name Extension
 
-Nulla facilisi. Maecenas sodales nec purus eget posuere. Sed sapien quam, pretium a risus in, porttitor dapibus erat. Sed sit amet fringilla ipsum, eget iaculis augue. Integer sollicitudin tortor quis ultricies aliquam. Suspendisse fringilla nunc in tellus cursus, at placerat tellus scelerisque. Sed tempus elit a sollicitudin rhoncus. Nulla facilisi. Morbi nec dolor dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras et aliquet lectus. Pellentesque sit amet eros nisi. Quisque ac sapien in sapien congue accumsan. Nullam in posuere ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin lacinia leo a nibh fringilla pharetra.
+In some cases, people want to keep the default snapshot naming
+`<TestClassName>.<TestMethodName>`, but they also want to be able
+to add some specific values (text, id, time etc.) to the default
+snapshot name.
 
-## Orci
+For this case we created the snapshot name extension possibility, where
+you can add values to the default snapshot name.
 
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis lectus dui, vel ultrices ante bibendum hendrerit. Aenean egestas feugiat dui id hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur in tellus laoreet, eleifend nunc id, viverra leo. Proin vulputate non dolor vel vulputate. Curabitur pretium lobortis felis, sit amet finibus lorem suscipit ut. Sed non mollis risus. Duis sagittis, mi in euismod tincidunt, nunc mauris vestibulum urna, at euismod est elit quis erat. Phasellus accumsan vitae neque eu placerat. In elementum arcu nec tellus imperdiet, eget maximus nulla sodales. Curabitur eu sapien eget nisl sodales fermentum.
+The type of the extension
+values does not matter, it will be converted into a string and concatenated
+by an underscore "\_".
 
-## Phasellus
+`Snapshot.Match(person, SnapshotNameExtension.Create("Age", 88, "Prof"));`
 
-Phasellus pulvinar ex id commodo imperdiet. Praesent odio nibh, sollicitudin sit amet faucibus id, placerat at metus. Donec vitae eros vitae tortor hendrerit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque vitae purus dolor. Duis suscipit ac nulla et finibus. Phasellus ac sem sed dui dictum gravida. Phasellus eleifend vestibulum facilisis. Integer pharetra nec enim vitae mattis. Duis auctor, lectus quis condimentum bibendum, nunc dolor aliquam massa, id bibendum orci velit quis magna. Ut volutpat nulla nunc, sed interdum magna condimentum non. Sed urna metus, scelerisque vitae consectetur a, feugiat quis magna. Donec dignissim ornare nisl, eget tempor risus malesuada quis.
+Snapshot extended name: `<TestClassName>.<TestMethodName>_Age_88_Prof.snap`
+
+[Example:](https://github.com/SwissLife-OSS/snapshooter-examples/blob/master/Examples/Snapshooter.Examples.Xunit/2_NamingTests/NamingTests.cs)
+
+```csharp
+[Fact]
+public void CreatePerson_SnapshotNameWithNameExtensions_SnapshotWithdDefaultNameExtensions()
+{
+    // arrange
+    var serviceClient = new ServiceClient();
+
+    // act
+    TestPerson person = serviceClient.CreatePerson(
+        Guid.Parse("1192F21C-8501-4771-A070-C79C7C7EF411"), "Albert", "Einstein");
+
+    // assert
+
+    // Snapshot name is NamingTests.CreatePerson_SnapshotNameWithNameExtensions_SnapshotWithdDefaultNameExtensions_Age_88_Prof.snap
+    Snapshot.Match(person, SnapshotNameExtension.Create("Age", 88, "Prof"));
+}
+```
