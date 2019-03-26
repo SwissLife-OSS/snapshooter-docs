@@ -27,10 +27,9 @@ const siteConfig = {
   // Used for publishing and more
   projectName: 'snapshooter-docs',
   realProjectName: "snapshooter",
-  organizationName: 'SwissLife-OSS',
+  organizationName: 'swisslife-oss',
   organizationTitle: 'SwissLife-OSS',
   organizationUrl,
-
   headerLinks: [{
       doc: 'introduction',
       href: '/docs',
