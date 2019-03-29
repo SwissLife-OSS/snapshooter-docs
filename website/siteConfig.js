@@ -25,7 +25,7 @@ const siteConfig = {
   baseUrl: '/snapshooter/', // Base URL for your project */
 
   // Used for publishing and more
-  projectName: 'snapshooter-docs',
+  projectName: 'snapshooter',
   realProjectName: "snapshooter",
   organizationName: 'swisslife-oss',
   organizationTitle: 'SwissLife-OSS',
