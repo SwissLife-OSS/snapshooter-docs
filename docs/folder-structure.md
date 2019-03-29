@@ -57,6 +57,8 @@ Snapshooter.Examples.Xunit.csproj
 
 ## Mismatch Folder
 
+<div id="mismatch"></div>
+
 If a snapshot already exists in the `__snapshots__` folder and the test result
 of the acutal running test does not match with the stored snapshot, then the
 new test result will be serialized to a snapshot and saved in the subfolder

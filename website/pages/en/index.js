@@ -102,10 +102,10 @@ class Index extends React.Component {
         <MarkdownBlock>
           Snapshooter is a flexible .Net testing tool to simplify the validation
           of your test results in your unit / integration tests. It creates
-          simply a snapshot of your test result object and stores it on the file
-          system. When the test is executed again, the snapshooter will compare
-          the current test result object with the stored snapshot, if both are
-          the same, the test will pass.
+          simply a snapshot of your test result and stores it alongside of your
+          test. When the test is executed again, the snapshooter will compare
+          the actual test result with the stored snapshot. If both are the same,
+          the test will pass.
         </MarkdownBlock>
         <MarkdownBlock>
           Snapshooter is based on the idea of **[Jest Snapshot
