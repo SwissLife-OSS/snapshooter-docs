@@ -21,14 +21,6 @@ class HomeSplash extends React.Component {
     const langPart = `${language ? `${language}/` : ""}`;
     const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
-    const SplashContainer = props => (
-      <div className="homeContainer">
-        <div className="homeSplashFade">
-          <div className="wrapper homeWrapper">{props.children}</div>
-        </div>
-      </div>
-    );
-
     const SplashSnapshooterContainer = props => (
       <div className="homeContainer homeSnapshooterContainer">
         <div className="homeSplashFade">
@@ -37,9 +29,11 @@ class HomeSplash extends React.Component {
       </div>
     );
 
-    const Logo = props => (
-      <div className="section logo">
-        <img src={props.img_src} alt="Project Logo" />
+    const SnapshooterLogo = props => (
+      <div className="snapshooterLogoPosition">
+        <div className="section logo">
+          <img src={props.img_src} alt="Project Logo" />
+        </div>
       </div>
     );
 
@@ -69,7 +63,9 @@ class HomeSplash extends React.Component {
     return (
       <SplashSnapshooterContainer>
         <div className="inner">
-          <Logo img_src={`${baseUrl}img/logo_sl_snapshooter.svg`} />
+          <SnapshooterLogo
+            img_src={`${baseUrl}img/logo_sl_snapshooter_glow.png`}
+          />
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button href={docUrl("get-started")}>Get Started</Button>

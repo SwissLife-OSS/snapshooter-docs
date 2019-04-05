@@ -46,3 +46,7 @@
 .blockImage img {
   height: 100%;
 }
+
+.snapshooterLogoPosition {
+  margin: -50px;
+}
