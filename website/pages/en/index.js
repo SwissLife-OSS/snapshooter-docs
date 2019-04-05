@@ -29,6 +29,14 @@ class HomeSplash extends React.Component {
       </div>
     );
 
+    const SplashSnapshooterContainer = props => (
+      <div className="homeContainer homeSnapshooterContainer">
+        <div className="homeSplashFade">
+          <div className="wrapper homeWrapper">{props.children}</div>
+        </div>
+      </div>
+    );
+
     const Logo = props => (
       <div className="section logo">
         <img src={props.img_src} alt="Project Logo" />
@@ -59,7 +67,7 @@ class HomeSplash extends React.Component {
     );
 
     return (
-      <SplashContainer>
+      <SplashSnapshooterContainer>
         <div className="inner">
           <Logo img_src={`${baseUrl}img/logo_sl_snapshooter.svg`} />
           <ProjectTitle siteConfig={siteConfig} />
@@ -68,7 +76,7 @@ class HomeSplash extends React.Component {
             <Button href={docUrl("introduction")}>Learn More</Button>
           </PromoSection>
         </div>
-      </SplashContainer>
+      </SplashSnapshooterContainer>
     );
   }
 }

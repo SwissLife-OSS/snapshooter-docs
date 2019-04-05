@@ -30,8 +30,8 @@
   color: #fff;
   font-size: 25px;
   margin: 13px;
-  border-radius: 7px;
   border: 0 none;
+  padding: 15px 32px;
 }
 
 .pluginWrapper.buttonWrapper>.button:hover {

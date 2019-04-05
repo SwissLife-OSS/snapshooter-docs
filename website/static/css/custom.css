@@ -77,6 +77,11 @@ body {
     text-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
 }
 
+.homeContainer.homeSnapshooterContainer {
+    background-color: #434546;
+    background: url("../img/bg_snapshooter.jpg") center center repeat-x;
+}
+
 h1,
 h2,
 h3,
@@ -91,8 +96,6 @@ h6 {
     font-weight: normal;
     text-transform: none;
     font-size: 16px;
-    border-radius: 0;
-    padding: 15px 32px;
 }
 
 .button.primary {
@@ -105,6 +108,9 @@ h6 {
     background-color: #a11c36;
 }
 
+.button:hover {
+    color: #fff !important;
+}
 
 .projectTitleInverted {
     color: #ffffff;
