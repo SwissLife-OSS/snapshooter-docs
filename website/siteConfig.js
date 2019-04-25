@@ -24,6 +24,12 @@ const siteConfig = {
   url: 'https://swisslife-oss.github.io', // Your website URL
   baseUrl: '/snapshooter/', // Base URL for your project */
 
+  // DocSearch
+  algolia: {
+    apiKey: '39489e5eb0c1a936be6ed354c0358c41', 
+    indexName: 'swisslife-oss', 
+  },
+
   // Used for publishing and more
   projectName: 'snapshooter',
   realProjectName: "snapshooter",
@@ -50,7 +56,8 @@ const siteConfig = {
       href: repoUrl,
       label: 'GitHub',
       external: true
-    }
+    },
+    { search: true }
   ],
 
   // If you have users set above, you add it here:
