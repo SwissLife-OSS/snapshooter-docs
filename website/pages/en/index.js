@@ -30,10 +30,8 @@ class HomeSplash extends React.Component {
     );
 
     const SnapshooterLogo = props => (
-      <div className="snapshooterLogoPosition">
-        <div className="section logo">
-          <img src={props.img_src} alt="Project Logo" />
-        </div>
+      <div className="section logo">
+        <img src={props.img_src} alt="Project Logo" />
       </div>
     );
 
