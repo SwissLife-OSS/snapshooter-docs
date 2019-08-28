@@ -6,7 +6,8 @@
       "folder-structure",
       "snapshot-options",
       "snapshot-mismatch-handling",
-      "scalar-type-snapshot"
+      "scalar-type-snapshot",
+      "ci-builds"
     ],
     "Match Options": ["Ignore Option", "Assert Option", "TypeOf Option"],
     "Guides": ["doc3"]
