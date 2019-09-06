@@ -9,6 +9,10 @@
         "title": "Basic Concept",
         "sidebar_label": "Basic Concept"
       },
+      "ci-builds": {
+        "title": "Snapshooter on CI-Builds",
+        "sidebar_label": "CI-Builds"
+      },
       "folder-structure": {
         "title": "Folder Structure",
         "sidebar_label": "Folder Structure"
