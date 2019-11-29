@@ -15,7 +15,7 @@ const users = [{
 
 const repoUrl = 'https://github.com/SwissLife-OSS/snapshooter';
 const organizationUrl = 'https://swissLife-oss.github.io';
-const examplesUrl = 'https://github.com/SwissLife-OSS/snapshooter-examples'
+const examplesUrl = 'https://github.com/SwissLife-OSS/snapshooter/tree/master/samples'
 const blogUrl = organizationUrl + "/blog";
 
 const siteConfig = {
