@@ -52,7 +52,7 @@ class HomeSplash extends React.Component {
 
     const Button = props => (
       <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={props.href} target={props.target}>
+        <a className={props.className} href={props.href} target={props.target}>
           {props.children}
         </a>
       </div>
@@ -66,8 +66,8 @@ class HomeSplash extends React.Component {
           />
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl("get-started")}>Get Started</Button>
-            <Button href={docUrl("introduction")}>Learn More</Button>
+            <Button className="button button-primary" href={docUrl("get-started")}>Get Started</Button>
+            <Button className="button button-secondary" href={docUrl("introduction")}>Learn More</Button>
           </PromoSection>
         </div>
       </SplashSnapshooterContainer>
