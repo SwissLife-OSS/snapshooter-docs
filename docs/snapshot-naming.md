@@ -23,9 +23,9 @@ the test method name. Additionally, every snapshot file name ends with
 
 > Snapshot default name: `<TestClassName>.<TestMethodName>.snap`
 
-[Example:](https://github.com/SwissLife-OSS/snapshooter-examples/blob/master/Examples/Snapshooter.Examples.Xunit/2_NamingTests/NamingTests.cs)
-
-```csharp
+<!-- snippet: DefaultSnapshotName_SnapshotWithDefaultName -->
+<a id='snippet-defaultsnapshotname_snapshotwithdefaultname'/></a>
+```cs
 [Fact]
 public void CreatePerson_DefaultSnapshotName_SnapshotWithDefaultName()
 {
@@ -33,7 +33,7 @@ public void CreatePerson_DefaultSnapshotName_SnapshotWithDefaultName()
     var serviceClient = new ServiceClient();
 
     // act
-    TestPerson person = serviceClient.CreatePerson(
+    var person = serviceClient.CreatePerson(
         Guid.Parse("1192F21C-8501-4771-A070-C79C7C7EF411"), "Albert", "Einstein");
 
     // assert
@@ -42,6 +42,8 @@ public void CreatePerson_DefaultSnapshotName_SnapshotWithDefaultName()
     Snapshot.Match(person);
 }
 ```
+<sup><a href='/snippets/Snippets/Snippets.cs#L9-L25' title='File snippet `defaultsnapshotname_snapshotwithdefaultname` was extracted from'>snippet source</a> | <a href='#snippet-defaultsnapshotname_snapshotwithdefaultname' title='Navigate to start of snippet `defaultsnapshotname_snapshotwithdefaultname`'>anchor</a></sup>
+<!-- endsnippet -->
 
 ## Defined Snapshot Name
 
@@ -53,9 +55,9 @@ in the snapshot match statement.
 
 This will result in **MyOwnSnapshotName1.snap**
 
-[Example:](https://github.com/SwissLife-OSS/snapshooter-examples/blob/master/Examples/Snapshooter.Examples.Xunit/2_NamingTests/NamingTests.cs)
-
-```csharp
+<!-- snippet: DefinedSnapshotName_SnapshotWithDefinedName -->
+<a id='snippet-definedsnapshotname_snapshotwithdefinedname'/></a>
+```cs
 [Fact]
 public void CreatePerson_DefinedSnapshotName_SnapshotWithDefinedName()
 {
@@ -63,7 +65,7 @@ public void CreatePerson_DefinedSnapshotName_SnapshotWithDefinedName()
     var serviceClient = new ServiceClient();
 
     // act
-    TestPerson person = serviceClient.CreatePerson(
+    var person = serviceClient.CreatePerson(
         Guid.Parse("1192F21C-8501-4771-A070-C79C7C7EF411"), "Albert", "Einstein");
 
     // assert
@@ -72,6 +74,8 @@ public void CreatePerson_DefinedSnapshotName_SnapshotWithDefinedName()
     Snapshot.Match(person, "ExplicitlyDefinedSnapshotName");
 }
 ```
+<sup><a href='/snippets/Snippets/Snippets.cs#L27-L43' title='File snippet `definedsnapshotname_snapshotwithdefinedname` was extracted from'>snippet source</a> | <a href='#snippet-definedsnapshotname_snapshotwithdefinedname' title='Navigate to start of snippet `definedsnapshotname_snapshotwithdefinedname`'>anchor</a></sup>
+<!-- endsnippet -->
 
 ## Snapshot Name Extension
 
@@ -91,11 +95,11 @@ by an underscore "\_".
 
 Snapshot extended name: `<TestClassName>.<TestMethodName>_Age_88_Prof.snap`
 
-[Example:](https://github.com/SwissLife-OSS/snapshooter-examples/blob/master/Examples/Snapshooter.Examples.Xunit/2_NamingTests/NamingTests.cs)
-
-```csharp
+<!-- snippet: SnapshotNameWithNameExtensions_SnapshotWithDefaultNameExtensions -->
+<a id='snippet-snapshotnamewithnameextensions_snapshotwithdefaultnameextensions'/></a>
+```cs
 [Fact]
-public void CreatePerson_SnapshotNameWithNameExtensions_SnapshotWithdDefaultNameExtensions()
+public void CreatePerson_SnapshotNameWithNameExtensions_SnapshotWithDefaultNameExtensions()
 {
     // arrange
     var serviceClient = new ServiceClient();
@@ -106,7 +110,9 @@ public void CreatePerson_SnapshotNameWithNameExtensions_SnapshotWithdDefaultName
 
     // assert
 
-    // Snapshot name is NamingTests.CreatePerson_SnapshotNameWithNameExtensions_SnapshotWithdDefaultNameExtensions_Age_88_Prof.snap
+    // Snapshot name is NamingTests.CreatePerson_SnapshotNameWithNameExtensions_SnapshotWithDefaultNameExtensions_Age_88_Prof.snap
     Snapshot.Match(person, SnapshotNameExtension.Create("Age", 88, "Prof"));
 }
 ```
+<sup><a href='/snippets/Snippets/Snippets.cs#L61-L77' title='File snippet `snapshotnamewithnameextensions_snapshotwithdefaultnameextensions` was extracted from'>snippet source</a> | <a href='#snippet-snapshotnamewithnameextensions_snapshotwithdefaultnameextensions' title='Navigate to start of snippet `snapshotnamewithnameextensions_snapshotwithdefaultnameextensions`'>anchor</a></sup>
+<!-- endsnippet -->

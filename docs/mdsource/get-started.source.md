@@ -25,25 +25,7 @@ During the test run, the `Snapshot.Match(person)` statement creates a new snapsh
 
 Example:
 
-<!-- snippet: SnapshotTest -->
-<a id='snippet-snapshottest'/></a>
-```cs
-[Fact]
-public void CreatePersonSnapshotTest()
-{
-    // arrange
-    var serviceClient = new ServiceClient();
-
-    // act
-    TestPerson person = serviceClient.CreatePerson(
-        Guid.Parse("2292F21C-8501-4771-A070-C79C7C7EF451"), "David", "Mustermann");
-
-    // assert
-    Snapshot.Match(person);
-}
-```
-<sup><a href='/snippets/Snippets/Snippets.cs#L45-L59' title='File snippet `snapshottest` was extracted from'>snippet source</a> | <a href='#snippet-snapshottest' title='Navigate to start of snippet `snapshottest`'>anchor</a></sup>
-<!-- endsnippet -->
+snippet: SnapshotTest
 
 > The `__snapshots__` folder is always next to your executed unit test file.
 
