@@ -52,7 +52,7 @@ Review your new snapshot file `__snapshots__/<UnitTestClassName>.<TestMethodName
 Now in every execution of your Test, the `Snapshot.Match(person)` statement will create again a snapshot of your test result and compares it against your reviewed snapshot in the `__snapshots__` folder.
 
 > If your snapshot and your test result do not match with each other, then your test will
-> fail with a snapshot mismatch exception. How you can handle/solve such a Snapshot Mismatch have a look [here](snapshot-mismatch).
+> fail with a snapshot mismatch exception. How you can handle/solve such a Snapshot Mismatch have a look [here](snapshot-mismatch-handling).
 
 Snapshooter is very flexible, therefore you can give your [snapshots your own name](snapshot-naming),
 or you can [ignore specific properties](snapshot-options) of your test results.
