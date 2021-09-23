@@ -13,8 +13,8 @@ The Snapshooter snapshot testing is based on the concept of **[Jest Snapshot Tes
 
 The Snapshooter snapshot testing is available for the following .Net Test Frameworks:
 
-1. [xUnit](https://xunit.github.io/)
-2. NUnit (coming soon)
+1. [xUnit](https://xunit.net)
+2. [NUnit](https://nunit.org)
 3. MsTest (coming soon)
 
 ### Getting Started
